@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<head>
+    <title>CRUD Operations DBS_A2</title>
+    
+</head>
+<body>
+    <center>
+        <h>CRUD Operations DBS_A2</h>
+        <hr/>
+        <b>Disease Type Table</b>
+        <br/>
+        <a href = "{% url 'insertionTable1' %}">Create New Disease Type Record</a>
+        <table border = "1", width = "900">
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+            </tr>
+
+            {%  for result in dataDisType  %}
+            <tr>
+                <td>{{result.id}}</td>
+                <td>{{result.description}}</td>
+                <td><a href = "editTable1/{{result.id}}">Edit</a></td>
+                <td><a href = "delete/{{result.id}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}
+        </table>
+
+        <b>Country Table</b>
+        <br/>
+        <a href = "{%url 'insertionTable2'%}">Create New Country Record</a>
+        <table border = "1", width = "900">
+            <tr>
+                <th>Country Name</th>
+                <th>Population</th>
+            </tr>
+
+            {%  for result in datacount  %}
+            <tr>
+                <td>{{result.cname}}</td>
+                <td>{{result.population}}</td>
+                <td><a href = "editTable2/{{result.cname}}">Edit</a></td>
+                <td><a href = "delete/{{result.cname}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}
+        </table>
+
+        
+        <b>Disease Table</b>
+        <br/>
+        <a href = "{%url 'insertionTable3'%}">Create New Disease Record</a>
+        <table border = "1", width = "900">
+            <tr>
+                <th>Disease Code</th>
+                <th>Pathogen</th>
+                <th>Description</th>
+                <th>Id</th>
+            </tr>
+
+            {%  for result in dataDis  %}
+            <tr>
+                <td>{{result.diseasecode}}</td>
+                <td>{{result.pathogen}}</td>
+                <td>{{result.description }}</td>
+                <td>{{result.id}}</td>
+                <td><a href = "editTable3/{{result.diseasecode}}">Edit</a></td>
+                <td><a href = "deletet3/{{result.diseasecode}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}
+        </table>
+
+        <b>Discover Table</b>
+        <br/>
+        <a href = "{%url 'insertionTable4'%}">Create New Discover Record</a>
+        <table border = "1", width = "900">
+            <tr>
+                <th>First Encounter Date</th>
+                <th>Disease Code</th>
+                <th>Country Name</th>
+            </tr>
+            
+            {%  for result in dataDiscover  %}
+            <tr>
+                <td>{{result.firstencdate}}</td>
+                <td>{{result.diseasecode}}</td>
+                <td>{{result.cname}}</td>
+                <td><a href = "editTable4/{{result.id}}">Edit</a></td>
+                <td><a href = "deletet4/{{result.id}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}
+
+        </table>
+
+        <b>Users Table</b>
+        <br/>
+        <a href = "{%url 'insertionTable5'%}">Create New Users Record</a>
+        <table border = "1", width = "900">
+            <tr>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Salary</th>
+                <th>Phone</th>
+                <th>Country Name</th>
+            </tr>
+
+            {%  for result in dataUsers  %}
+            <tr>
+                <td>{{result.email}}</td>
+                <td>{{result.name}}</td>
+                <td>{{result.surname}}</td>
+                <td>{{result.salary}}</td>
+                <td>{{result.phone}}</td>
+                <td>{{result.cname}}</td>
+                <td><a href = "editTable5/{{result.email}}">Edit</a></td>
+                <td><a href = "deletet5/{{result.email}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}
+        </table>
+
+        <b>Public Servant Table</b>
+        <br/>
+        <a href = "{%url 'insertionTable6'%}">Create New Public Servant Record</a>
+        <table border = "1", width = "900">
+            <tr>
+                <th>Email</th>
+                <th>Department</th>
+            </tr>
+
+            {%  for result in dataPubServ  %}
+            <tr>
+                <td>{{result.email}}</td>
+                <td>{{result.department}}</td>
+                <td><a href = "editTable6/{{result.id}}">Edit</a></td>
+                <td><a href = "deletet6/{{result.id}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}
+        </table>
+
+        <b>Doctor Table</b>
+        <br/>
+        <a href = "{%url 'insertionTable7'%}">Create New Doctor Record</a>
+        <table border = "1", width = "900">
+            <tr>
+                <th>Email</th>
+                <th>Degree</th>
+            </tr>
+
+            {%  for result in dataDoc  %}
+            <tr>
+                <td>{{result.email}}</td>
+                <td>{{result.degree}}</td>
+                <td><a href = "editTable7/{{result.id}}">Edit</a></td>
+                <td><a href = "deletet7/{{result.id}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}
+        </table>
+
+        <b>Specialize Table</b>
+        <br/>
+        <a href = "{%url 'insertionTable8'%}">Create New Specialize Record</a>
+        <table border = "1", width = "900">
+            <tr>
+                <th>Specialization Id</th>
+                <th>Email</th>
+            </tr>
+
+            {%  for result in dataSpec  %}
+            <tr>
+                <td>{{result.specid}}</td>
+                <td>{{result.email}}</td>                
+                <td><a href = "editTable8/{{result.id}}">Edit</a></td>
+                <td><a href = "deletet8/{{result.id}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}
+        </table>
+
+        <b>Record Table</b>
+        <br/>
+        <a href = "{%url 'insertionTable9'%}">Create New Record</a>
+        <table border = "1", width = "900">
+            <tr>
+                <th>Email</th>
+                <th>Country Name</th>
+                <th>Disease Code</th>
+                <th>Total Deaths</th>
+                <th>Total Patients</th>
+            </tr>
+
+            {%  for result in dataRecord  %}
+            <tr>
+                <td>{{result.email}}</td>
+                <td>{{result.cname}}</td>
+                <td>{{result.diseasecode}}</td>
+                <td>{{result.totaldeaths}}</td>
+                <td>{{result.totalpatients}}</td>               
+                <td><a href = "editTable9/{{result.id}}">Edit</a></td>
+                <td><a href = "deletet9/{{result.id}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}
+        </table>
+    </center>
+</body>
+</html>

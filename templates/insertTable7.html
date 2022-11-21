@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Creating a new record</title>
+</head> 
+<body>
+    <center>
+        <h1>Doctor table</h1>
+        <hr/>
+        <form method = "POST">
+            {%  csrf_token  %}
+            <table border = "1">
+            
+                <tr>
+                    <td>Email</td>
+                    <td><input type = "text" placeholder = "Enter Email" name = "email"> </td>
+                </tr>
+                <tr>
+                    <td>Degree</td>
+                    <td><input type = "text" placeholder = "Enter Degree" name = "degree"> </td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td><input type = "text" placeholder = "Enter Id" name = "id"> </td>
+                </tr>
+
+                <tr>
+                    <td><input type = "submit" value = "Insert"/>
+                    <td>        
+                        {%  if messages  %}
+                        {%  for mess in messages  %}
+                        <b>{{mess}}</b>    
+                
+                        {%  endfor  %}
+                        {%  endif  %}
+                    </td>
+                </tr>
+            </table>
+            <a href = "{% url 'showMain' %}">Home Page</a>
+    </center>
+</body>
+</html>

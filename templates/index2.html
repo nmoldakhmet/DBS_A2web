@@ -1,0 +1,332 @@
+{% load static %}
+{% static ''%}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+    <title>CRUD Operations DBS_A2</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">Disease Type Table</h2>
+      <a href = "{% url 'insertionTable1' %}">Create New Disease Type Record</a>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>  
+              <th scope="col">ID</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%  for result in dataDisType  %}
+            <tr>
+                <td>{{result.id}}</td>
+                <td>{{result.description}}</td>
+                <td><a href = "editTable1/{{result.id}}">Edit</a></td>
+                <td><a href = "delete/{{result.id}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">Country Table</h2>
+      <a href = "{%url 'insertionTable2'%}">Create New Country Record</a>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>  
+              <th scope="col">Country Name</th>
+              <th scope="col">Population</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%  for result in datacount  %}
+            <tr>
+                <td>{{result.cname}}</td>
+                <td>{{result.population}}</td>
+                <td><a href = "editTable2/{{result.cname}}">Edit</a></td>
+                <td><a href = "delete/{{result.cname}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}          
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">Disease Table</h2>
+      <a href = "{%url 'insertionTable3'%}">Create New Disease Record</a>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>  
+              <th scope="col">Disease Code</th>
+              <th scope="col">Pathogen</th>
+              <th scope="col">Description</th>
+              <th scope="col">Id</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%  for result in dataDis  %}
+            <tr>
+                <td>{{result.diseasecode}}</td>
+                <td>{{result.pathogen}}</td>
+                <td>{{result.description }}</td>
+                <td>{{result.id}}</td>
+                <td><a href = "editTable3/{{result.diseasecode}}">Edit</a></td>
+                <td><a href = "deletet3/{{result.diseasecode}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}        
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">Discover Table</h2>
+      <a href = "{%url 'insertionTable4'%}">Create New Discover Record</a>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>  
+              <th scope="col">First Encounter Date</th>
+              <th scope="col">Disease Code</th>
+              <th scope="col">Country Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%  for result in dataDiscover  %}
+            <tr>
+                <td>{{result.firstencdate}}</td>
+                <td>{{result.diseasecode}}</td>
+                <td>{{result.cname}}</td>
+                <td><a href = "editTable4/{{result.id}}">Edit</a></td>
+                <td><a href = "deletet4/{{result.id}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}     
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+    
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">Users Table</h2>
+      <a href = "{%url 'insertionTable5'%}">Create New Users Record</a>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>  
+              <th scope="col">Email</th>
+              <th scope="col">Name</th>
+              <th scope="col">Surname</th>
+              <th scope="col">Salary</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Country Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%  for result in dataUsers  %}
+            <tr>
+                <td>{{result.email}}</td>
+                <td>{{result.name}}</td>
+                <td>{{result.surname}}</td>
+                <td>{{result.salary}}</td>
+                <td>{{result.phone}}</td>
+                <td>{{result.cname}}</td>
+                <td><a href = "editTable5/{{result.email}}">Edit</a></td>
+                <td><a href = "deletet5/{{result.email}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}   
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>  
+
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">Public Servant Table</h2>
+      <a href = "{%url 'insertionTable6'%}">Create New Public Servant Record</a>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>  
+              <th scope="col">Email</th>
+              <th scope="col">Department</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%  for result in dataPubServ  %}
+            <tr>
+                <td>{{result.email}}</td>
+                <td>{{result.department}}</td>
+                <td><a href = "editTable6/{{result.id}}">Edit</a></td>
+                <td><a href = "deletet6/{{result.id}}">Delete</a></td>
+            </tr>
+            {%  endfor  %} 
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>  
+
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">Doctor Table</h2>
+      <a href = "{%url 'insertionTable7'%}">Create New Doctor Record</a>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>  
+              <th scope="col">Email</th>
+              <th scope="col">Degree</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%  for result in dataDoc  %}
+            <tr>
+                <td>{{result.email}}</td>
+                <td>{{result.degree}}</td>
+                <td><a href = "editTable7/{{result.id}}">Edit</a></td>
+                <td><a href = "deletet7/{{result.id}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>  
+
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">Specialize Table</h2>
+      <a href = "{%url 'insertionTable8'%}">Create New Specialize Record</a>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>  
+              <th scope="col">Specialization Id</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%  for result in dataSpec  %}
+            <tr>
+                <td>{{result.specid}}</td>
+                <td>{{result.email}}</td>                
+                <td><a href = "editTable8/{{result.id}}">Edit</a></td>
+                <td><a href = "deletet8/{{result.id}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div> 
+  
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">Record Table</h2>
+      <a href = "{%url 'insertionTable9'%}">Create New Record</a>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>  
+              <th scope="col">Email</th>
+              <th scope="col">Country Name</th>
+              <th scope="col">Disease Code</th>
+              <th scope="col">Total Deaths</th>
+              <th scope="col">Total Patients</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%  for result in dataRecord  %}
+            <tr>
+                <td>{{result.email}}</td>
+                <td>{{result.cname}}</td>
+                <td>{{result.diseasecode}}</td>
+                <td>{{result.totaldeaths}}</td>
+                <td>{{result.totalpatients}}</td>               
+                <td><a href = "editTable9/{{result.id}}">Edit</a></td>
+                <td><a href = "deletet9/{{result.id}}">Delete</a></td>
+            </tr>
+            {%  endfor  %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>  
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

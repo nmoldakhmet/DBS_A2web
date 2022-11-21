@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Creating a new record</title>
+</head> 
+<body>
+    <center>
+        <h1>Discover table</h1>
+        <hr/>
+        <form method = "POST">
+            {%  csrf_token  %}
+            <table border = "1">
+            
+                <tr>
+                    <td>First Encountered Date</td>
+                    <td><input type = "text" placeholder = "Enter First Encountered Date" name = "firstencdate"> </td>
+                </tr>
+                <tr>
+                    <td>Disease Code</td>
+                    <td><input type = "text" placeholder = "Enter Disease Code" name = "diseasecode"> </td>
+                </tr>
+                <tr>
+                    <td>Country Name</td>
+                    <td><input type = "text" placeholder = "Enter Country Name" name = "cname"> </td>
+                </tr>
+                <tr>
+                    <td>Id</td>
+                    <td><input type = "text" placeholder = "Enter Id" name = "id"> </td>
+                </tr>
+
+                <tr>
+                    <td><input type = "submit" value = "Insert"/>
+                    <td>        
+                        {%  if messages  %}
+                        {%  for mess in messages  %}
+                        <b>{{mess}}</b>    
+                
+                        {%  endfor  %}
+                        {%  endif  %}
+                    </td>
+                </tr>
+            </table>
+            <a href = "{% url 'showMain' %}">Home Page</a>
+    </center>
+</body>
+</html>

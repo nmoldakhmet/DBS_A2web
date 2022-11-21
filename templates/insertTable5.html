@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Creating a new record</title>
+</head> 
+<body>
+    <center>
+        <h1>Users table</h1>
+        <hr/>
+        <form method = "POST">
+            {%  csrf_token  %}
+            <table border = "1">
+            
+                <tr>
+                    <td>Email</td>
+                    <td><input type = "text" placeholder = "Enter Email" name = "email"> </td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type = "text" placeholder = "Enter Name" name = "name"> </td>
+                </tr>
+                <tr>
+                    <td>Surname</td>
+                    <td><input type = "text" placeholder = "Enter Surname" name = "surname"> </td>
+                </tr>
+                <tr>
+                    <td>Salary</td>
+                    <td><input type = "text" placeholder = "Enter Salary" name = "salary"> </td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td><input type = "text" placeholder = "Enter Phone" name = "phone"> </td>
+                </tr>
+                <tr>
+                    <td>Country Name</td>
+                    <td><input type = "text" placeholder = "Enter Country Name" name = "cname"> </td>
+                </tr>
+
+
+                <tr>
+                    <td><input type = "submit" value = "Insert"/>
+                    <td>        
+                        {%  if messages  %}
+                        {%  for mess in messages  %}
+                        <b>{{mess}}</b>    
+                
+                        {%  endfor  %}
+                        {%  endif  %}
+                    </td>
+                </tr>
+            </table>
+            <a href = "{% url 'showMain' %}">Home Page</a>
+    </center>
+</body>
+</html>

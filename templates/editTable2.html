@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <title>Edit</title>
+</head>
+<body>
+    <center>
+        <h1> 
+            Edit page
+        </h1>
+
+        <h3>
+            Country Table
+        </h3>
+        <hr/>
+        <form method = "POST" action = "/updateTable2/{{countryModel.cname}}">
+            {%csrf_token%}
+        
+        <table border = "1">
+            <tr>
+                <td>Country Name</td>
+                <td><input type="text" name="cname" value="{{countryModel.cname}}" readonly></td>
+            </tr>
+            <tr>
+                <td>Population</td>
+                <td><input type="text" name="population" value="{{countryModel.population}}"></td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value = "Update record"></td>
+                <td>        
+                    {%  if messages  %}
+                    {%  for mess in messages  %}
+                    <b>{{mess}}</b>    
+            
+                    {%  endfor  %}
+                    {%  endif  %}
+                </td>
+            </tr>
+        </table>
+
+        <a href = "{% url 'showMain' %}">Home Page</a>
+    </form>
+    </center>
+</body>
+
+
+</html>
